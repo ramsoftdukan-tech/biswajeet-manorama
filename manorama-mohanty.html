@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manorama Mohanty | Agarbatti Manufacturing, Kendrapara, Odisha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue: #9f1239;
+      --blue-dark: #7f1d1d;
+      --blue-light: #fff1f2;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --white: #ffffff;
+      --bg: #f9fafb;
+      --green: #16a34a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .nav-right { display: flex; align-items: center; gap: 0.9rem; }
+
+    .nav-phone { font-size: 0.82rem; color: var(--muted); font-weight: 500; }
+
+    .btn-call {
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.42rem 1rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-call:hover { background: var(--blue-dark); }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 3.5rem 5% 3rem;
+      max-width: 700px;
+    }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.28rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.3rem;
+    }
+    .hero-tag::before { content: '◆'; font-size: 0.5rem; }
+
+    #hero h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+
+    #hero p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      max-width: 500px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-btns { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.6rem 1.3rem;
+      border-radius: 7px;
+      font-size: 0.87rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      padding: 0.6rem 1.3rem;
+      border-radius: 7px;
+      font-size: 0.87rem;
+      font-weight: 600;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ── SECTIONS ── */
+    section { padding: 3.5rem 5%; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.45rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 460px;
+      margin-bottom: 2.2rem;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.6rem 1.4rem;
+      transition: box-shadow 0.25s, transform 0.2s;
+    }
+    .service-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); transform: translateY(-2px); }
+
+    .service-icon {
+      width: 42px; height: 42px;
+      background: var(--blue-light);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .service-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+
+    .service-card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .about-left h2 {
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .about-left > p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+    }
+
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .check-list li {
+      display: flex; align-items: flex-start; gap: 0.55rem;
+      font-size: 0.86rem; color: var(--text);
+    }
+
+    .check-list li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    /* Biz Card */
+    .biz-card {
+      background: var(--blue);
+      border-radius: 12px;
+      padding: 1.8rem;
+      color: var(--white);
+    }
+
+    .biz-card-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 1.4rem;
+    }
+
+    .biz-row { margin-bottom: 1.1rem; }
+    .biz-row:last-child { margin-bottom: 0; }
+
+    .biz-key {
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.2rem;
+    }
+
+    .biz-val { font-size: 0.92rem; font-weight: 600; }
+
+    .biz-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border-radius: 4px;
+      padding: 0.12rem 0.55rem;
+      font-size: 0.78rem;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--white); }
+
+    .contact-lead {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-items { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+
+    .contact-icon-wrap {
+      width: 40px; height: 40px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      color: var(--blue);
+    }
+
+    .contact-item-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.18rem;
+    }
+
+    .contact-item-val {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .contact-item-val a { color: var(--blue); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      padding: 2.8rem 5% 1.4rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .footer-brand-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.8rem;
+      line-height: 1.7;
+      max-width: 240px;
+    }
+
+    .footer-col h5 {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul li a {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+
+    .footer-contact-list { display: flex; flex-direction: column; gap: 0.45rem; }
+    .footer-contact-list p { font-size: 0.8rem; line-height: 1.5; }
+
+    .footer-bottom {
+      border-top: 1px solid #1f2937;
+      padding-top: 1.2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.6rem;
+    }
+
+    .footer-bottom p { font-size: 0.76rem; color: #6b7280; }
+
+    .footer-bottom-links { display: flex; gap: 1.1rem; list-style: none; }
+    .footer-bottom-links a {
+      font-size: 0.76rem;
+      color: #6b7280;
+      transition: color 0.2s;
+    }
+    .footer-bottom-links a:hover { color: #fff; }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--border); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      #hero { padding: 2rem 5%; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">Manorama Mohanty</div>
+    <div class="nav-right">
+      <span class="nav-phone">+91 90403 95818</span>
+      <a href="tel:+919040395818" class="btn-call">Call Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-tag">Agarbatti Manufacturing &middot; Kendrapara, Odisha</div>
+    <h1>Pure & Fragrant<br>Agarbatti, Made<br>with Care in Odisha</h1>
+    <p>Manorama Mohanty is a Kendrapara-based Udyam-registered enterprise manufacturing quality agarbatti (incense sticks) using traditional methods and natural fragrances.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Our Products</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-label">What We Make</div>
+    <h2 class="section-title">Our Products</h2>
+    <p class="section-sub">Quality agarbatti and incense preparations crafted with natural ingredients.</p>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🕉️</div>
+        <h3>Traditional Agarbatti</h3>
+        <p>Classic incense sticks made with natural fragrances, ideal for daily puja and rituals.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🌸</div>
+        <h3>Scented Incense Sticks</h3>
+        <p>A range of pleasant, long-lasting fragrances for home and devotional use.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📦</div>
+        <h3>Bulk Supply for Retailers</h3>
+        <p>Reliable bulk production and supply for shops, temples, and distributors.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">✅</div>
+        <h3>Quality Assurance</h3>
+        <p>Consistent quality and craftsmanship in every batch, backed by years of experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+
+      <div class="about-left reveal">
+        <div class="section-label">About Us</div>
+        <h2>Trusted Agarbatti<br>Manufacturer in<br>Kendrapara, Odisha</h2>
+        <p>Manorama Mohanty is a Kendrapara-based Udyam-registered manufacturing unit producing agarbatti and other incense preparations, combining traditional craftsmanship with consistent quality since 2022.</p>
+        <ul class="check-list">
+          <li>Registered Micro Enterprise under Udyam (Govt. of India)</li>
+          <li>Natural fragrances and quality raw materials</li>
+          <li>Reliable bulk production for retailers and distributors</li>
+          <li>Serving Kendrapara and surrounding areas of Odisha</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <div class="biz-card">
+          <div class="biz-card-title">Business Details</div>
+          <div class="biz-row">
+            <div class="biz-key">Enterprise</div>
+            <div class="biz-val">Manorama Mohanty</div>
+          </div>
+          <div class="biz-row">
+            <div class="biz-key">Type</div>
+            <div class="biz-val"><span class="biz-badge">Micro Enterprise · Agarbatti Manufacturing</span></div>
+          </div>
+          <div class="biz-row">
+            <div class="biz-key">Udyam Reg. No.</div>
+            <div class="biz-val">UDYAM-OD-17-0047064</div>
+          </div>
+          <div class="biz-row">
+            <div class="biz-key">Location</div>
+            <div class="biz-val">Kendrapara, Odisha</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Contact Us</h2>
+    <p class="contact-lead">Looking to place an order or need agarbatti supply? Reach out — we're happy to help.</p>
+
+    <div class="contact-items">
+      <div class="contact-item reveal">
+        <div class="contact-icon-wrap">✉️</div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-val"><a href="mailto:janmejayamohanty1191@gmail.com">janmejayamohanty1191@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item reveal">
+        <div class="contact-icon-wrap">📞</div>
+        <div>
+          <div class="contact-item-label">Phone</div>
+          <div class="contact-item-val"><a href="tel:+919040395818">+91 90403 95818</a></div>
+        </div>
+      </div>
+      <div class="contact-item reveal">
+        <div class="contact-icon-wrap">📍</div>
+        <div>
+          <div class="contact-item-label">Address</div>
+          <div class="contact-item-val">
+            Shree Baladevjew, Bada Baranga,<br>
+            Kendrapara Town, Kendrapara, Odisha,<br>
+            India, Pin - 754212
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-brand-name">Manorama Mohanty</div>
+        <p>Trusted agarbatti manufacturing unit based in Kendrapara, Odisha. Natural fragrances, consistent quality.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact-list">
+          <p>janmejayamohanty1191@gmail.com</p>
+          <p>+91 90403 95818</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Manorama Mohanty. All rights reserved.</p>
+      <ul class="footer-bottom-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => io.observe(r));
+  </script>
+
+</body>
+</html>
